@@ -19,8 +19,8 @@ void setup() {
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz, max = 3500; Datasheet limit is 3052=50MHz/(4*4096)
 
 
-  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai 87
-  pwm.setPWM(14, 0, angleToPulse(135) ); //95
+  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
+  pwm.setPWM(14, 0, angleToPulse(135) ); 
   delay(500);
   pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
   pwm.setPWM(12, 0, angleToPulse(150) );
