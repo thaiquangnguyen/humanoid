@@ -20,10 +20,10 @@ void setup() {
 
 
   pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
-  pwm.setPWM(14, 0, angleToPulse(135) ); 
+  pwm.setPWM(14, 0, angleToPulse(130) ); 
   delay(500);
-  pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
-  pwm.setPWM(12, 0, angleToPulse(150) );
+  pwm.setPWM(4, 0, angleToPulse(35) );   //vao trong, toi truoc
+  pwm.setPWM(12, 0, angleToPulse(155) );
   delay(500);
   pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
   pwm.setPWM(10, 0, angleToPulse(65) );
@@ -40,130 +40,165 @@ int angle_ii=0;
 void loop() {
   int angle6=45;
   int angle66=150;
-  int angle14=135;
+  int angle14=130;
   int angle1414=30;
   int angle0=96;
   int angle00=25;
   int angle8=100;
   int angle88=168;
-    while (Serial.available()) {
-      int dataIn, m;
-      int sliderNumber;
-      Serial.print("dataIn = ");
-      Serial.println(dataIn = (int)Serial.read());  // Read the data
-      if (dataIn == 100)
-        m = 100;
-      if ((dataIn >= 0) && (dataIn <= 95))
-        sliderNumber = dataIn;
-      if (dataIn == 101)
-        m = 101;
-      if (dataIn == 102)
-        m = 102;
-      if (dataIn == 103)
-        m = 103;
-      if (dataIn == 104)
-        m = 104;
-      if (dataIn == 105)
-        m = 105;
-      if (dataIn == 106)
-        m = 106;
-      if (dataIn == 107)
-        m = 107;
-      if (dataIn == 108)
-        m = 108;
-      if (dataIn == 109)
-        m = 109;
-      if (dataIn == 110)
-        m = 110;
-    if ((sliderNumber >= 1) && (sliderNumber <= 95)){
-      angle_i=sliderNumber;
-      Serial.print("both = ");
-      Serial.println(angle_i);
-      double Angle6=(double)(angle66-(angle66-angle6)/95*angle_ii);
-      double Angle66=(double)(angle66-(angle66-angle6)/95*angle_i);
-      double Angle14=(double)(angle1414+(angle14-angle1414)/95*angle_ii);
-      double Angle1414=(double)(angle1414+(angle14-angle1414)/95*angle_i);
-      double Angle0=(double)(angle00+(angle0-angle00)/95*angle_ii);
-      double Angle00=(double)(angle00+(angle0-angle00)/95*angle_i);
-      double Angle8=(double)(angle88-(angle88-angle8)/95*angle_ii);
-      double Angle88=(double)(angle88-(angle88-angle8)/95*angle_i);
-      Ultimate4(6,Angle6,Angle66,  14,Angle14,Angle1414,  0,Angle0,Angle00,  8,Angle8,Angle88,  distance(angle_i,angle_ii)*5);
-      angle_ii=angle_i;
-      sliderNumber=-1;
-    }
-    if (m == 101){
-      Serial.println("Attack");
-      Ultimate4(6,angle66,angle6,  14,angle1414,angle14, 0,angle00,angle0,  8,angle88,angle8,  1000);
-      delay(50);
-      pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
-      pwm.setPWM(12, 0, angleToPulse(150) );
-      delay(500);
-      pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-      pwm.setPWM(10, 0, angleToPulse(65) );
-      delay(500);
-      pwm.setPWM(15, 0, angleToPulse(98) );
-      delay(10);
-      m = -1;
-    }
-    if (m == 102){
-      Serial.println("Defend");
-      Ultimate4(6,angle6,angle66,  14,angle14,angle1414, 0,angle0,angle00,  8,angle8,angle88,  1000);
-      delay(50);
-      pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
-      pwm.setPWM(12, 0, angleToPulse(150) );
-      delay(500);
-      pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-      pwm.setPWM(10, 0, angleToPulse(65) );
-      delay(500);
-      pwm.setPWM(15, 0, angleToPulse(98) );
-      delay(10);
-      m = -1;
-    }
-      
-    if (m == 103) {
-      switch (count){
-        case 0:
-          Forward(count++);
-          Forward(count++);
-          m = -1;
-          break;
-        default:
-          Forward(count++);
-          m = -1;
-          break;
-      }
-    }
-    if (m == 104){
-       m = -1;
-       RightKick(1);
-    }
-     
-    if (m == 105){
-       RightKick(2);
-       m = -1;
-    }
-    if (m == 106){
-       RightKick(3);
-       m =-1;
-    }
-    if (m == 107){
-      GoLeft();
-      m =-1;
-    }
-    if (m == 108){
-      GoRight();
-      m=-1;
-    }
-    if (m == 109){
-      ForwardStop();
-      m=-1;
-    }
-    if (m == 110){
-      LeftTurn();
-      m=-1;
-    }
+  
+  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
+  pwm.setPWM(14, 0, angleToPulse(130) ); 
+  delay(500);
+  pwm.setPWM(4, 0, angleToPulse(35) );   //vao trong, toi truoc
+  pwm.setPWM(12, 0, angleToPulse(155) );
+  delay(500);
+  pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
+  pwm.setPWM(10, 0, angleToPulse(65) );
+  delay(500);
+  pwm.setPWM(0, 0, angleToPulse(96) );   //ra truoc, vao trong
+  pwm.setPWM(8, 0, angleToPulse(100) );
+  pwm.setPWM(15, 0, angleToPulse(98) );
+  delay(300);
+  
+  //RightKick(1);
+//  Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,88,  1000);
+//  delay(1000);
+//  Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+//  delay(5000);
 
-    }
+  //RightKick(2);
+//  Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,98,  1000);
+//  delay(1000);
+//  Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+//  delay(5000);
+
+  //RightKick(3);
+//  Ultimate8(8,100,80,  14,130,145,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,125,  1000);
+//  delay(1000);
+//  Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+//  delay(5000);
+
+
+  
+//    while (Serial.available()) {
+//      int dataIn, m;
+//      int sliderNumber;
+//      Serial.print("dataIn = ");
+//      Serial.println(dataIn = (int)Serial.read());  // Read the data
+//      if (dataIn == 100)
+//        m = 100;
+//      if ((dataIn >= 0) && (dataIn <= 95))
+//        sliderNumber = dataIn;
+//      if (dataIn == 101)
+//        m = 101;
+//      if (dataIn == 102)
+//        m = 102;
+//      if (dataIn == 103)
+//        m = 103;
+//      if (dataIn == 104)
+//        m = 104;
+//      if (dataIn == 105)
+//        m = 105;
+//      if (dataIn == 106)
+//        m = 106;
+//      if (dataIn == 107)
+//        m = 107;
+//      if (dataIn == 108)
+//        m = 108;
+//      if (dataIn == 109)
+//        m = 109;
+//      if (dataIn == 110)
+//        m = 110;
+//    if ((sliderNumber >= 1) && (sliderNumber <= 95)){
+//      angle_i=sliderNumber;
+//      Serial.print("both = ");
+//      Serial.println(angle_i);
+//      double Angle6=(double)(angle66-(angle66-angle6)/95*angle_ii);
+//      double Angle66=(double)(angle66-(angle66-angle6)/95*angle_i);
+//      double Angle14=(double)(angle1414+(angle14-angle1414)/95*angle_ii);
+//      double Angle1414=(double)(angle1414+(angle14-angle1414)/95*angle_i);
+//      double Angle0=(double)(angle00+(angle0-angle00)/95*angle_ii);
+//      double Angle00=(double)(angle00+(angle0-angle00)/95*angle_i);
+//      double Angle8=(double)(angle88-(angle88-angle8)/95*angle_ii);
+//      double Angle88=(double)(angle88-(angle88-angle8)/95*angle_i);
+//      Ultimate4(6,Angle6,Angle66,  14,Angle14,Angle1414,  0,Angle0,Angle00,  8,Angle8,Angle88,  distance(angle_i,angle_ii)*5);
+//      angle_ii=angle_i;
+//      sliderNumber=-1;
+//    }
+//    if (m == 101){
+//      Serial.println("Attack");
+//      Ultimate4(6,angle66,angle6,  14,angle1414,angle14, 0,angle00,angle0,  8,angle88,angle8,  2000);
+//      delay(50);
+//      pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
+//      pwm.setPWM(12, 0, angleToPulse(150) );
+//      delay(500);
+//      pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
+//      pwm.setPWM(10, 0, angleToPulse(65) );
+//      delay(500);
+//      pwm.setPWM(15, 0, angleToPulse(98) );
+//      delay(10);
+//      m = -1;
+//    }
+//    if (m == 102){
+//      Serial.println("Defend");
+//      Ultimate4(6,angle6,angle66,  14,angle14,angle1414, 0,angle0,angle00,  8,angle8,angle88,  2000);
+//      delay(50);
+//      pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
+//      pwm.setPWM(12, 0, angleToPulse(150) );
+//      delay(500);
+//      pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
+//      pwm.setPWM(10, 0, angleToPulse(65) );
+//      delay(500);
+//      pwm.setPWM(15, 0, angleToPulse(98) );
+//      delay(10);
+//      m = -1;
+//    }
+//      
+//    if (m == 103) {
+//      switch (count){
+//        case 0:
+//          Forward(count++);
+//          Forward(count++);
+//          m = -1;
+//          break;
+//        default:
+//          Forward(count++);
+//          m = -1;
+//          break;
+//      }
+//    }
+//    if (m == 104){
+//       m = -1;
+//       RightKick(1);
+//    }
+//     
+//    if (m == 105){
+//       RightKick(2);
+//       m = -1;
+//    }
+//    if (m == 106){
+//       RightKick(3);
+//       m =-1;
+//    }
+//    if (m == 107){
+//      GoLeft();
+//      m =-1;
+//    }
+//    if (m == 108){
+//      GoRight();
+//      m=-1;
+//    }
+//    if (m == 109){
+//      ForwardStop();
+//      m=-1;
+//    }
+//    if (m == 110){
+//      LeftTurn();
+//      m=-1;
+//    }
+//
+//    }
 }
 
 int angleToPulse(double ang) {
@@ -261,34 +296,24 @@ void RightKick(int type) {
 
 void GoLeft() {
   Serial.println("GoLeft()");
-  //Ultimate4(0,93,78,  6,93,108,  8,93,83,   14,79,89,  300);
-  // delay(1);
-  // pwm.setPWM(0, 0, angleToPulse(92) );
-  Ultimate6(0, 93, 103, 4, 25, 21, 12, 170, 174,   6, 93, 85,  8, 93, 130, 14, 79, 50,  300);
+  Ultimate6(0,96,106,  4,35,31,  12,155,159,   6,45,37,  8,100,137,  14,130,111,  300);
   delay(100);
-  Ultimate4(0, 103, 63,  6, 85, 108,  8, 130, 93,  14, 50, 79, 300);
+  Ultimate4(0,106,66,  6,37,60,  8,137,100,  14,111,140, 300);
   delay(1);
-  pwm.setPWM(6, 0, angleToPulse(93) );
+  pwm.setPWM(6, 0, angleToPulse(45) );
   delay(1);
-  Ultimate3(0, 63, 93, 4, 21, 25, 12, 170, 174, 100);
-  
+  Ultimate4(0,66,96,  4,31,35,  12,159,155,  14,140,130,  100);
 }
 
 void GoRight() {
   Serial.println("GoRight()");
-  Ultimate6(0, 93, 83, 4, 25, 21, 12, 170, 174, 6, 93, 100, 8, 93, 88, 14, 79, 87, 175);
+  Ultimate6(0,96,56,  4,35,31,  12,155,159,   6,45,73,  8,100,85,  14,130,139,  400);
+  delay(100);
+  Ultimate4(0,56,105,  6,73,46,  8,85,137,  14,139,110, 300);
+  delay(100);
+  pwm.setPWM(14, 0, angleToPulse(130) );
   delay(1);
-  Ultimate4(0, 83, 65, 6, 100, 118, 8, 88, 90, 14, 87, 80, 175);
-  delay(1);
-  Ultimate4(0, 65, 105, 6, 118, 90, 8, 90, 130, 14, 80, 65, 175);
-  delay(1);
-  pwm.setPWM(14, 0, angleToPulse(79) );
-  pwm.setPWM(0, 0, angleToPulse(120) );
-  pwm.setPWM(8, 0, angleToPulse(125) );
-  delay(350);
-  Ultimate6(0, 120, 93, 4, 21, 25, 12, 174, 170, 6, 90, 93, 8, 125, 93, 14, 65, 79,  200);
-  delay(200);
- 
+  Ultimate5(0,105,96,  4,31,35,  12,159,155,  8,137,100,  6,46,45,  100);
 }
 
 void LeftTurn() {
