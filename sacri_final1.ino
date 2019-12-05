@@ -22,20 +22,20 @@ void setup() {
   pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
   pwm.setPWM(14, 0, angleToPulse(130) ); 
   delay(500);
-  pwm.setPWM(4, 0, angleToPulse(35) );   //vao trong, toi truoc
-  pwm.setPWM(12, 0, angleToPulse(155) );
+  pwm.setPWM(4, 0, angleToPulse(90) );
+  pwm.setPWM(12, 0, angleToPulse(90) );
   delay(500);
   pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
   pwm.setPWM(10, 0, angleToPulse(65) );
   delay(500);
   pwm.setPWM(0, 0, angleToPulse(96) );   //ra truoc, vao trong
   pwm.setPWM(8, 0, angleToPulse(100) );
-  pwm.setPWM(15, 0, angleToPulse(98) );
+  pwm.setPWM(15,0, angleToPulse(98) );
   delay(10);
 }
 
 int count = 0;
-int angle_i=0;
+int angle_i=0; 
 int angle_ii=0;
 void loop() {
   int angle6=45;
@@ -47,36 +47,24 @@ void loop() {
   int angle8=100;
   int angle88=168;
   
-  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
-  pwm.setPWM(14, 0, angleToPulse(130) ); 
-  delay(500);
-  pwm.setPWM(4, 0, angleToPulse(35) );   //vao trong, toi truoc
-  pwm.setPWM(12, 0, angleToPulse(155) );
-  delay(500);
-  pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-  pwm.setPWM(10, 0, angleToPulse(65) );
-  delay(500);
-  pwm.setPWM(0, 0, angleToPulse(96) );   //ra truoc, vao trong
-  pwm.setPWM(8, 0, angleToPulse(100) );
-  pwm.setPWM(15, 0, angleToPulse(98) );
-  delay(300);
-  
-  //RightKick(1);
-//  Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,88,  1000);
-//  delay(1000);
-//  Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
-//  delay(5000);
+//  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
+//  pwm.setPWM(14, 0, angleToPulse(130) ); 
+//  delay(500);
+//  pwm.setPWM(4, 0, angleToPulse(35) );   //vao trong, toi truoc
+//  pwm.setPWM(12, 0, angleToPulse(155) );
+//  delay(500);
+//  pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
+//  pwm.setPWM(10, 0, angleToPulse(65) );
+//  delay(500);
+//  pwm.setPWM(0, 0, angleToPulse(96) );   //ra truoc, vao trong
+//  pwm.setPWM(8, 0, angleToPulse(100) );
+//  pwm.setPWM(15, 0, angleToPulse(98) );
+//  delay(300);
 
-  //RightKick(2);
-//  Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,98,  1000);
-//  delay(1000);
-//  Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
-//  delay(5000);
-
-  //RightKick(3);
-//  Ultimate8(8,100,80,  14,130,145,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,125,  1000);
-//  delay(1000);
-//  Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+  //TurnLeft
+//  Ultimate4(0,96,110,  6,45,31,  8,100,129,  14,130,120,  1000);
+//  delay(1);
+//  Ultimate1(15,98,125,  1000);
 //  delay(5000);
 
 
@@ -278,20 +266,31 @@ void RightKick(int type) {
   switch(type){
     case 1:
       Serial.println("RightKick(1)");
-       
+      Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,88,  1000);
+      delay(1000);
+      Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+      delay(5000);
       break;
     case 2:
       Serial.println("RightKick(2)");
-       
+      Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,98,  1000);
+      delay(3000);
+      pwm.setPWM(4, 0, angleToPulse(5) );
+      pwm.setPWM(2, 0, angleToPulse(88) );
+      pwm.setPWM(0, 0, angleToPulse(85) );
+      pwm.setPWM(12, 0, angleToPulse(115) );
+      pwm.setPWM(8, 0, angleToPulse(75) );
+      //Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+      delay(5000);
       break;
     case 3:
       Serial.println("RightKick(3)");
-       
+      Ultimate8(8,100,80,  14,130,145,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,125,  1000);
+      delay(1000);
+      Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
+      delay(5000);
       break;
   }
-
-
-  
 }
 
 void GoLeft() {
