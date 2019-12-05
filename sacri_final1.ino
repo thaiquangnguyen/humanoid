@@ -37,32 +37,14 @@ int angle_i=0;
 int angle_ii=0;
 void loop() {
   int angle4=49;
- // int angle44=;
+  int angle44=154;
   int angle12=130;
- // int angle1212=;
+  int angle1212=30;
   int angle0=93;
   int angle00=25;
   int angle8=100;
   int angle88=168;
   
-  pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
-  pwm.setPWM(14, 0, angleToPulse(99) ); 
-  delay(500);
-  pwm.setPWM(4, 0, angleToPulse(49) );
-  pwm.setPWM(12, 0, angleToPulse(130) );
-  delay(500);
-  pwm.setPWM(2, 0, angleToPulse(77) );   //ra ngoai, toi truoc
-  pwm.setPWM(10, 0, angleToPulse(115) );
-  delay(500);
-  pwm.setPWM(0, 0, angleToPulse(93) );   //ra truoc, vao trong
-  pwm.setPWM(8, 0, angleToPulse(100) );
-  delay(100);
-  
-  //TurnRight
-LeftTurn();
-  
-
-
   
 //    while (Serial.available()) {
 //      int dataIn, m;
