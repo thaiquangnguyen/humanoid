@@ -7,11 +7,10 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 //Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x41);
 
 #define SERVOMIN  120 // this is the 'minimum' pulse length count (out of 4096)
-#define SERVOMAX  595 // this is the 'maximum' pulse length count (out of 4096)
+#define SERVOMAX  621 // this is the 'maximum' pulse length count (out of 4096)
 
 // our servo # counter
 uint8_t servonum = 0;
-
 void setup() {
   Serial.begin(9600);
 
@@ -19,53 +18,49 @@ void setup() {
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz, max = 3500; Datasheet limit is 3052=50MHz/(4*4096)
 
 
-  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
-  pwm.setPWM(14, 0, angleToPulse(130) ); 
+  pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+  pwm.setPWM(14, 0, angleToPulse(99) ); 
   delay(500);
-  pwm.setPWM(4, 0, angleToPulse(90) );
-  pwm.setPWM(12, 0, angleToPulse(90) );
+  pwm.setPWM(4, 0, angleToPulse(49) );
+  pwm.setPWM(12, 0, angleToPulse(130) );
   delay(500);
-  pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-  pwm.setPWM(10, 0, angleToPulse(65) );
+  pwm.setPWM(2, 0, angleToPulse(77) );   //ra ngoai, toi truoc
+  pwm.setPWM(10, 0, angleToPulse(115) );
   delay(500);
-  pwm.setPWM(0, 0, angleToPulse(96) );   //ra truoc, vao trong
+  pwm.setPWM(0, 0, angleToPulse(93) );   //ra truoc, vao trong
   pwm.setPWM(8, 0, angleToPulse(100) );
-  pwm.setPWM(15,0, angleToPulse(98) );
-  delay(10);
+  delay(1000);
 }
 
 int count = 0;
 int angle_i=0; 
 int angle_ii=0;
 void loop() {
-  int angle6=45;
-  int angle66=150;
-  int angle14=130;
-  int angle1414=30;
-  int angle0=96;
+  int angle4=49;
+ // int angle44=;
+  int angle12=130;
+ // int angle1212=;
+  int angle0=93;
   int angle00=25;
   int angle8=100;
   int angle88=168;
   
-//  pwm.setPWM(6, 0, angleToPulse(45) );    //ra sau, ra ngoai
-//  pwm.setPWM(14, 0, angleToPulse(130) ); 
-//  delay(500);
-//  pwm.setPWM(4, 0, angleToPulse(35) );   //vao trong, toi truoc
-//  pwm.setPWM(12, 0, angleToPulse(155) );
-//  delay(500);
-//  pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-//  pwm.setPWM(10, 0, angleToPulse(65) );
-//  delay(500);
-//  pwm.setPWM(0, 0, angleToPulse(96) );   //ra truoc, vao trong
-//  pwm.setPWM(8, 0, angleToPulse(100) );
-//  pwm.setPWM(15, 0, angleToPulse(98) );
-//  delay(300);
-
-  //TurnLeft
-//  Ultimate4(0,96,110,  6,45,31,  8,100,129,  14,130,120,  1000);
-//  delay(1);
-//  Ultimate1(15,98,125,  1000);
-//  delay(5000);
+  pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+  pwm.setPWM(14, 0, angleToPulse(99) ); 
+  delay(500);
+  pwm.setPWM(4, 0, angleToPulse(49) );
+  pwm.setPWM(12, 0, angleToPulse(130) );
+  delay(500);
+  pwm.setPWM(2, 0, angleToPulse(77) );   //ra ngoai, toi truoc
+  pwm.setPWM(10, 0, angleToPulse(115) );
+  delay(500);
+  pwm.setPWM(0, 0, angleToPulse(93) );   //ra truoc, vao trong
+  pwm.setPWM(8, 0, angleToPulse(100) );
+  delay(100);
+  
+  //TurnRight
+LeftTurn();
+  
 
 
   
@@ -102,44 +97,40 @@ void loop() {
 //      angle_i=sliderNumber;
 //      Serial.print("both = ");
 //      Serial.println(angle_i);
-//      double Angle6=(double)(angle66-(angle66-angle6)/95*angle_ii);
-//      double Angle66=(double)(angle66-(angle66-angle6)/95*angle_i);
-//      double Angle14=(double)(angle1414+(angle14-angle1414)/95*angle_ii);
-//      double Angle1414=(double)(angle1414+(angle14-angle1414)/95*angle_i);
+//      double Angle4=(double)(angle44-(angle44-angle4)/95*angle_ii);
+//      double Angle44=(double)(angle44-(angle44-angle4)/95*angle_i);
+//      double Angle12=(double)(angle1212+(angle12-angle1212)/95*angle_ii);
+//      double Angle1212=(double)(angle1212+(angle12-angle1212)/95*angle_i);
 //      double Angle0=(double)(angle00+(angle0-angle00)/95*angle_ii);
 //      double Angle00=(double)(angle00+(angle0-angle00)/95*angle_i);
 //      double Angle8=(double)(angle88-(angle88-angle8)/95*angle_ii);
 //      double Angle88=(double)(angle88-(angle88-angle8)/95*angle_i);
-//      Ultimate4(6,Angle6,Angle66,  14,Angle14,Angle1414,  0,Angle0,Angle00,  8,Angle8,Angle88,  distance(angle_i,angle_ii)*5);
+//      Ultimate4(4,Angle4,Angle44,  12,Angle12,Angle1212,  0,Angle0,Angle00,  8,Angle8,Angle88,  distance(angle_i,angle_ii)*5);
 //      angle_ii=angle_i;
 //      sliderNumber=-1;
 //    }
 //    if (m == 101){
 //      Serial.println("Attack");
-//      Ultimate4(6,angle66,angle6,  14,angle1414,angle14, 0,angle00,angle0,  8,angle88,angle8,  2000);
+//      Ultimate4(4,angle44,angle4,  12,angle1212,angle12, 0,angle00,angle0,  8,angle88,angle8,  2000);
 //      delay(50);
-//      pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
-//      pwm.setPWM(12, 0, angleToPulse(150) );
+//      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+//      pwm.setPWM(14, 0, angleToPulse(99) ); 
 //      delay(500);
-//      pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-//      pwm.setPWM(10, 0, angleToPulse(65) );
+//      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
+//      pwm.setPWM(10, 0, angleToPulse(105) );
 //      delay(500);
-//      pwm.setPWM(15, 0, angleToPulse(98) );
-//      delay(10);
 //      m = -1;
 //    }
 //    if (m == 102){
 //      Serial.println("Defend");
-//      Ultimate4(6,angle6,angle66,  14,angle14,angle1414, 0,angle0,angle00,  8,angle8,angle88,  2000);
+//      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  2000);
 //      delay(50);
-//      pwm.setPWM(4, 0, angleToPulse(45) );   //vao trong, toi truoc
-//      pwm.setPWM(12, 0, angleToPulse(150) );
+//      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+//      pwm.setPWM(14, 0, angleToPulse(99) ); 
 //      delay(500);
-//      pwm.setPWM(2, 0, angleToPulse(90) );   //ra ngoai, toi truoc
-//      pwm.setPWM(10, 0, angleToPulse(65) );
+//      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
+//      pwm.setPWM(10, 0, angleToPulse(105) );
 //      delay(500);
-//      pwm.setPWM(15, 0, angleToPulse(98) );
-//      delay(10);
 //      m = -1;
 //    }
 //      
@@ -190,7 +181,7 @@ void loop() {
 }
 
 int angleToPulse(double ang) {
-  int pulse = map(ang, 0, 180, SERVOMIN, SERVOMAX);
+  int pulse = map(ang, 0, 190, SERVOMIN, SERVOMAX);
   return pulse;
 }
 
@@ -273,15 +264,11 @@ void RightKick(int type) {
       break;
     case 2:
       Serial.println("RightKick(2)");
-      Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,98,  1000);
-      delay(3000);
-      pwm.setPWM(4, 0, angleToPulse(5) );
-      pwm.setPWM(2, 0, angleToPulse(88) );
-      pwm.setPWM(0, 0, angleToPulse(85) );
-      pwm.setPWM(12, 0, angleToPulse(115) );
-      pwm.setPWM(8, 0, angleToPulse(75) );
-      //Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
-      delay(5000);
+      Ultimate4(8,100,95,  12,130,125,  0,93,70,  4,49,42,  1000);
+      delay(10);
+      pwm.setPWM(4, 0, angleToPulse(100) );
+      pwm.setPWM(0, 0, angleToPulse(68) );
+      pwm.setPWM(8, 0, angleToPulse(122) );
       break;
     case 3:
       Serial.println("RightKick(3)");
@@ -295,51 +282,51 @@ void RightKick(int type) {
 
 void GoLeft() {
   Serial.println("GoLeft()");
-  Ultimate6(0,96,106,  4,35,31,  12,155,159,   6,45,37,  8,100,137,  14,130,111,  300);
+  Ultimate4(0,93,103,  4,49,41,  8,100,145,  12,130,106,  300);
   delay(100);
-  Ultimate4(0,106,66,  6,37,60,  8,137,100,  14,111,140, 300);
+  Ultimate4(0,103,63,  4,41,64,  8,145,100,  12,106,140, 300);
   delay(1);
-  pwm.setPWM(6, 0, angleToPulse(45) );
+  pwm.setPWM(4, 0, angleToPulse(39) );
+  pwm.setPWM(0, 0, angleToPulse(50) );
   delay(1);
-  Ultimate4(0,66,96,  4,31,35,  12,159,155,  14,140,130,  100);
+  Ultimate4(0,55,93,  4,64,49,  12,140,130,  4,39,49,  100);
+  delay(200);
 }
 
 void GoRight() {
   Serial.println("GoRight()");
-  Ultimate6(0,96,56,  4,35,31,  12,155,159,   6,45,73,  8,100,85,  14,130,139,  400);
+  Ultimate4(0,93,53,  4,49,77,  12,130,134,  8,100,85,  400);
   delay(100);
-  Ultimate4(0,56,105,  6,73,46,  8,85,137,  14,139,110, 300);
+  Ultimate4(0,53,103,  4,77,45,  8,85,147,  12,134,105, 500);
   delay(100);
-  pwm.setPWM(14, 0, angleToPulse(130) );
-  delay(1);
-  Ultimate5(0,105,96,  4,31,35,  12,159,155,  8,137,100,  6,46,45,  100);
+  pwm.setPWM(12, 0, angleToPulse(140) );
+  delay(300);
+  Ultimate4(0,103,93,  4,45,49,  12,140,130,  8,147,100,  100);
+  delay(200);
 }
 
 void LeftTurn() {
-
-    Serial.println("LeftTurn()");
-    Ultimate6(6,93,83, 14,79,69, 4,25,65, 2,95,130, 10,97,110, 12,170,180, 200);
-    delay(50);
-    Ultimate6(10,110,100, 12,180,160,6,83,89, 14,69,80, 8,93,84, 4,65,60 ,200 );
-    delay(50);
-    Ultimate5(0,93,75, 6,89,97, 4,60,45, 12, 160,175, 2,130,115, 200);
-    delay(50);
-    Ultimate7(4,45,38, 2,115,110, 6,97,93, 0,80,77, 8, 84,82, 12,175,180,10,100,105,  200);
-    delay(10);
-    
-    pwm.setPWM(2, 0, angleToPulse(80) );    //ra sau, ra ngoai 87
-    pwm.setPWM(14, 0, angleToPulse(79) );
-    pwm.setPWM(4, 0, angleToPulse(5) );
-    delay(300);
-    Ultimate3(0,77,93, 8,82,93, 6,93,100, 300);
-    delay(200);
-    Ultimate5(2,80,95, 4,5,25,  6,100,93, 10,105,97, 12,180,170, 500);
-    delay(100);
-   
+  Serial.println("LeftTurn()");
+  Ultimate3(0,93,73,  8,100,85,  12,130,135,  200);
+  delay(10);
+  Ultimate1(14,99,125,  500);
+  delay(10);
+  pwm.setPWM(14, 0, angleToPulse(99) );
+  delay(10);
+  Ultimate3(0,73,93,  8,85,100,  12,135,130,  100);
+  delay(200);
 }
 
 void RightTurn() {
-  //single tap
+  Serial.println("RightTurn()");
+  Ultimate3(0,93,73,  8,100,85,  12,130,135,  200);
+  delay(10);
+  Ultimate1(14,99,53,  500);
+  delay(200);
+  pwm.setPWM(14, 0, angleToPulse(99) );
+  delay(10);
+  Ultimate3(0,73,93,  8,85,100,  12,135,130,  100);
+  delay(100);
 }
 
 void Ultimate1(int Number, int Start, int End, int Time ) {
