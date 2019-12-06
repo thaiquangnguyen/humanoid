@@ -37,14 +37,13 @@ int angle_i=0;
 int angle_ii=0;
 void loop() {
   int angle4=49;
-  int angle44=154;
+  int angle44=173;
   int angle12=130;
-  int angle1212=30;
+  int angle1212=12;
   int angle0=93;
   int angle00=25;
   int angle8=100;
-  int angle88=168;
-  
+  int angle88=168;  
   
     while (Serial.available()) {
       int dataIn, m;
@@ -105,14 +104,15 @@ void loop() {
     }
     if (m == 102){
       Serial.println("Defend");
-      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  2000);
-      delay(50);
+      Ultimate2(2,77,0,  10,115,190,  1000);
+      delay(500);
+      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  200);
+      delay(1000);
       pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
       pwm.setPWM(14, 0, angleToPulse(99) ); 
       delay(500);
       pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
       pwm.setPWM(10, 0, angleToPulse(105) );
-      delay(500);
       m = -1;
     }
       
@@ -235,11 +235,20 @@ void RightKick(int type) {
   //double tap
   switch(type){
     case 1:
-      Serial.println("RightKick(1)");
-      Ultimate8(8,100,80,  14,130,140,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,88,  1000);
-      delay(1000);
-      Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
-      delay(5000);
+//  Ultimate1(0,93,73,  1000);
+//  delay(10);
+//  Ultimate4(6,99,190,  0,73,103,  10,115,105,  4,49,39,  1000);
+//  delay(500);
+//  Ultimate1(2,77,93,  1000);
+//  delay(500);
+//  Ultimate3(4,39,49,  10,105,110, 0,103,95,  100);
+//  delay(500);
+//  Ultimate3(4,49,5, 0,95,110,8,100,95, 10);
+//  delay(500);
+//  Ultimate3(4,5,49, 0,110,93, 8,95,100, 1000);
+//  delay(500);
+//  Ultimate3(10,110,115, 6,190,99, 2,93,77,1000);
+      pwm.setPWM(12, 0, angleToPulse(80) );
       break;
     case 2:
       Serial.println("RightKick(2)");
@@ -251,10 +260,7 @@ void RightKick(int type) {
       break;
     case 3:
       Serial.println("RightKick(3)");
-      Ultimate8(8,100,80,  14,130,145,  0,96,80,  6,45,55,  10,65,55,  12,155,145,  4,35,40,  15,98,125,  1000);
-      delay(1000);
-      Ultimate5(4,40,20,  2,90,88,  0,80,85,  12,145,115,  8,80,75,  100);
-      delay(5000);
+      pwm.setPWM(12, 0, angleToPulse(80) );
       break;
   }
 }
