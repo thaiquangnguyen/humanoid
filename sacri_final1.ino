@@ -46,120 +46,120 @@ void loop() {
   int angle88=168;
   
   
-//    while (Serial.available()) {
-//      int dataIn, m;
-//      int sliderNumber;
-//      Serial.print("dataIn = ");
-//      Serial.println(dataIn = (int)Serial.read());  // Read the data
-//      if (dataIn == 100)
-//        m = 100;
-//      if ((dataIn >= 0) && (dataIn <= 95))
-//        sliderNumber = dataIn;
-//      if (dataIn == 101)
-//        m = 101;
-//      if (dataIn == 102)
-//        m = 102;
-//      if (dataIn == 103)
-//        m = 103;
-//      if (dataIn == 104)
-//        m = 104;
-//      if (dataIn == 105)
-//        m = 105;
-//      if (dataIn == 106)
-//        m = 106;
-//      if (dataIn == 107)
-//        m = 107;
-//      if (dataIn == 108)
-//        m = 108;
-//      if (dataIn == 109)
-//        m = 109;
-//      if (dataIn == 110)
-//        m = 110;
-//    if ((sliderNumber >= 1) && (sliderNumber <= 95)){
-//      angle_i=sliderNumber;
-//      Serial.print("both = ");
-//      Serial.println(angle_i);
-//      double Angle4=(double)(angle44-(angle44-angle4)/95*angle_ii);
-//      double Angle44=(double)(angle44-(angle44-angle4)/95*angle_i);
-//      double Angle12=(double)(angle1212+(angle12-angle1212)/95*angle_ii);
-//      double Angle1212=(double)(angle1212+(angle12-angle1212)/95*angle_i);
-//      double Angle0=(double)(angle00+(angle0-angle00)/95*angle_ii);
-//      double Angle00=(double)(angle00+(angle0-angle00)/95*angle_i);
-//      double Angle8=(double)(angle88-(angle88-angle8)/95*angle_ii);
-//      double Angle88=(double)(angle88-(angle88-angle8)/95*angle_i);
-//      Ultimate4(4,Angle4,Angle44,  12,Angle12,Angle1212,  0,Angle0,Angle00,  8,Angle8,Angle88,  distance(angle_i,angle_ii)*5);
-//      angle_ii=angle_i;
-//      sliderNumber=-1;
-//    }
-//    if (m == 101){
-//      Serial.println("Attack");
-//      Ultimate4(4,angle44,angle4,  12,angle1212,angle12, 0,angle00,angle0,  8,angle88,angle8,  2000);
-//      delay(50);
-//      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
-//      pwm.setPWM(14, 0, angleToPulse(99) ); 
-//      delay(500);
-//      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
-//      pwm.setPWM(10, 0, angleToPulse(105) );
-//      delay(500);
-//      m = -1;
-//    }
-//    if (m == 102){
-//      Serial.println("Defend");
-//      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  2000);
-//      delay(50);
-//      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
-//      pwm.setPWM(14, 0, angleToPulse(99) ); 
-//      delay(500);
-//      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
-//      pwm.setPWM(10, 0, angleToPulse(105) );
-//      delay(500);
-//      m = -1;
-//    }
-//      
-//    if (m == 103) {
-//      switch (count){
-//        case 0:
-//          Forward(count++);
-//          Forward(count++);
-//          m = -1;
-//          break;
-//        default:
-//          Forward(count++);
-//          m = -1;
-//          break;
-//      }
-//    }
-//    if (m == 104){
-//       m = -1;
-//       RightKick(1);
-//    }
-//     
-//    if (m == 105){
-//       RightKick(2);
-//       m = -1;
-//    }
-//    if (m == 106){
-//       RightKick(3);
-//       m =-1;
-//    }
-//    if (m == 107){
-//      GoLeft();
-//      m =-1;
-//    }
-//    if (m == 108){
-//      GoRight();
-//      m=-1;
-//    }
-//    if (m == 109){
-//      ForwardStop();
-//      m=-1;
-//    }
-//    if (m == 110){
-//      LeftTurn();
-//      m=-1;
-//    }
-//
-//    }
+    while (Serial.available()) {
+      int dataIn, m;
+      int sliderNumber;
+      Serial.print("dataIn = ");
+      Serial.println(dataIn = (int)Serial.read());  // Read the data
+      if (dataIn == 100)
+        m = 100;
+      if ((dataIn >= 0) && (dataIn <= 95))
+        sliderNumber = dataIn;
+      if (dataIn == 101)
+        m = 101;
+      if (dataIn == 102)
+        m = 102;
+      if (dataIn == 103)
+        m = 103;
+      if (dataIn == 104)
+        m = 104;
+      if (dataIn == 105)
+        m = 105;
+      if (dataIn == 106)
+        m = 106;
+      if (dataIn == 107)
+        m = 107;
+      if (dataIn == 108)
+        m = 108;
+      if (dataIn == 109)
+        m = 109;
+      if (dataIn == 110)
+        m = 110;
+    if ((sliderNumber >= 1) && (sliderNumber <= 95)){
+      angle_i=sliderNumber;
+      Serial.print("both = ");
+      Serial.println(angle_i);
+      double Angle4=(double)(angle44-(angle44-angle4)/95*angle_ii);
+      double Angle44=(double)(angle44-(angle44-angle4)/95*angle_i);
+      double Angle12=(double)(angle1212+(angle12-angle1212)/95*angle_ii);
+      double Angle1212=(double)(angle1212+(angle12-angle1212)/95*angle_i);
+      double Angle0=(double)(angle00+(angle0-angle00)/95*angle_ii);
+      double Angle00=(double)(angle00+(angle0-angle00)/95*angle_i);
+      double Angle8=(double)(angle88-(angle88-angle8)/95*angle_ii);
+      double Angle88=(double)(angle88-(angle88-angle8)/95*angle_i);
+      Ultimate4(4,Angle4,Angle44,  12,Angle12,Angle1212,  0,Angle0,Angle00,  8,Angle8,Angle88,  distance(angle_i,angle_ii)*5);
+      angle_ii=angle_i;
+      sliderNumber=-1;
+    }
+    if (m == 101){
+      Serial.println("Attack");
+      Ultimate4(4,angle44,angle4,  12,angle1212,angle12, 0,angle00,angle0,  8,angle88,angle8,  2000);
+      delay(50);
+      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+      pwm.setPWM(14, 0, angleToPulse(99) ); 
+      delay(500);
+      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
+      pwm.setPWM(10, 0, angleToPulse(105) );
+      delay(500);
+      m = -1;
+    }
+    if (m == 102){
+      Serial.println("Defend");
+      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  2000);
+      delay(50);
+      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+      pwm.setPWM(14, 0, angleToPulse(99) ); 
+      delay(500);
+      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
+      pwm.setPWM(10, 0, angleToPulse(105) );
+      delay(500);
+      m = -1;
+    }
+      
+    if (m == 103) {
+      switch (count){
+        case 0:
+          Forward(count++);
+          Forward(count++);
+          m = -1;
+          break;
+        default:
+          Forward(count++);
+          m = -1;
+          break;
+      }
+    }
+    if (m == 104){
+       m = -1;
+       RightKick(1);
+    }
+     
+    if (m == 105){
+       RightKick(2);
+       m = -1;
+    }
+    if (m == 106){
+       RightKick(3);
+       m =-1;
+    }
+    if (m == 107){
+      GoLeft();
+      m =-1;
+    }
+    if (m == 108){
+      GoRight();
+      m=-1;
+    }
+    if (m == 109){
+      ForwardStop();
+      m=-1;
+    }
+    if (m == 110){
+      LeftTurn();
+      m=-1;
+    }
+
+    }
 }
 
 int angleToPulse(double ang) {
@@ -173,42 +173,39 @@ int distance(int x,int y){
 }
 
 void Forward(int count){
-   if (count==0){
-    // right leg forward from standing
-    Serial.println("Forward(0)");
-    Ultimate3(10,97,87,  12,170,155,  0,93,62,  200);
-    delay(1);
-    Ultimate4(0,62,100,   12,155,145,  10,87,72,  8,93,106,  200);
-    delay(1);
-     
-   } 
-   else {
-    // left leg forward from count = 0, then right leg forward
-    Serial.println("Forward(1)");
-    Ultimate6(0,100,97,  2,95,115,  4,25,50,  12,145,160,  8,106,145,  10,72,80,  200);
-    delay(1);
-    Ultimate4(8,145,87,  10,80,99,  12,160,175, 0,97,93,  200);
-    delay(1);
-
-
-    Ultimate4(10,99,79,  12,175,155,  0,93,65,  4,50,35,  200);
-    delay(1);
-    Ultimate4(0,65,97,  4,35,20,  2,115,95,  8,87,102, 200);
-    delay(1);
-    Ultimate4(0,97,100,  4,20,25,  8,102,106,   10,79,72,  200);
-    delay(1);
-    
-   }
+//   if (count==0){
+//    // right leg forward from standing
+//    Serial.println("Forward(0)");
+//    Ultimate3(10,97,87,  12,170,155,  0,93,62,  200);
+//    delay(1);
+//    Ultimate4(0,62,100,   12,155,145,  10,87,72,  8,93,106,  200);
+//    delay(1);
+//   } 
+//   else {
+//    // left leg forward from count = 0, then right leg forward
+//    Serial.println("Forward(1)");
+//    Ultimate6(0,100,97,  2,95,115,  4,25,50,  12,145,160,  8,106,145,  10,72,80,  200);
+//    delay(1);
+//    Ultimate4(8,145,87,  10,80,99,  12,160,175, 0,97,93,  200);
+//    delay(1);
+//
+//
+//    Ultimate4(10,99,79,  12,175,155,  0,93,65,  4,50,35,  200);
+//    delay(1);
+//    Ultimate4(0,65,97,  4,35,20,  2,115,95,  8,87,102, 200);
+//    delay(1);
+//    Ultimate4(0,97,100,  4,20,25,  8,102,106,   10,79,72,  200);
+//    delay(1);
+//   }
 }
 
 void ForwardStop(){
   //left leg forward to standing
-    Serial.println("ForwardStop()");
-    Ultimate6(0,100,103,  2,95,123,  4,25,70,  6,93,88,  12,155,145,  8,106,137,  300);
-    delay(1);
-    Ultimate7(0,103,93,  2,123,95,  4,70,25,  6,88,93,  8,137,93,  10,72,97,  12,145,170,  300);
-    delay(1);
-   
+//    Serial.println("ForwardStop()");
+//    Ultimate6(0,100,103,  2,95,123,  4,25,70,  6,93,88,  12,155,145,  8,106,137,  300);
+//    delay(1);
+//    Ultimate7(0,103,93,  2,123,95,  4,70,25,  6,88,93,  8,137,93,  10,72,97,  12,145,170,  300);
+//    delay(1);
 }
 
 void Backward(){
