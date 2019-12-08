@@ -24,8 +24,8 @@ void setup() {
   pwm.setPWM(4, 0, angleToPulse(49) );
   pwm.setPWM(12, 0, angleToPulse(130) );
   delay(500);
-  pwm.setPWM(2, 0, angleToPulse(77) );   //ra ngoai, toi truoc
-  pwm.setPWM(10, 0, angleToPulse(115) );
+  pwm.setPWM(2, 0, angleToPulse(72) );   //ra ngoai, toi truoc
+  pwm.setPWM(10, 0, angleToPulse(120) );
   delay(500);
   pwm.setPWM(0, 0, angleToPulse(93) );   //ra truoc, vao trong
   pwm.setPWM(8, 0, angleToPulse(100) );
@@ -74,6 +74,12 @@ void loop() {
         m = 109;
       if (dataIn == 110)
         m = 110;
+      if (dataIn == 111)
+        m = 111;
+      if (dataIn == 112)
+        m = 112;
+      if (dataIn == 113)
+        m = 113;
     if ((sliderNumber >= 1) && (sliderNumber <= 95)){
       angle_i=sliderNumber;
       Serial.print("both = ");
@@ -102,15 +108,39 @@ void loop() {
       delay(500);
       m = -1;
     }
-    if (m == 102){
-      Serial.println("Defend");
-      Ultimate2(2,77,0,  10,115,190,  1000);
-      delay(500);
-      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  200);
-      delay(1000);
+    if (m == 112){
+      Serial.println("AttackLeft");
+      Ultimate5(4,angle44,angle4,  12,angle1212,angle12, 0,angle00,angle0,  8,angle88,angle8,  6,40,99,  2000);
+      delay(50);
       pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
       pwm.setPWM(14, 0, angleToPulse(99) ); 
       delay(500);
+      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
+      pwm.setPWM(10, 0, angleToPulse(105) );
+      delay(500);
+      m = -1;
+    }
+    if (m == 113){
+      Serial.println("AttackRight");
+      Ultimate5(4,angle44,angle4,  12,angle1212,angle12, 0,angle00,angle0,  8,angle88,angle8,  6,160,99,  2000);
+      delay(50);
+      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+      pwm.setPWM(14, 0, angleToPulse(99) ); 
+      delay(500);
+      pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
+      pwm.setPWM(10, 0, angleToPulse(105) );
+      delay(500);
+      m = -1;
+    }
+    if (m == 102){
+      Serial.println("Defend");
+      Ultimate2(2,72,0,  10,115,190,  500);
+      delay(500);
+      Ultimate4(4,angle4,angle44,  12,angle12,angle1212, 0,angle0,angle00,  8,angle8,angle88,  200);
+      delay(300);
+      pwm.setPWM(6, 0, angleToPulse(99) );    //ra sau, ra ngoai
+      pwm.setPWM(14, 0, angleToPulse(99) ); 
+      delay(200);
       pwm.setPWM(2, 0, angleToPulse(87) );   //ra ngoai, toi truoc
       pwm.setPWM(10, 0, angleToPulse(105) );
       m = -1;
@@ -156,6 +186,10 @@ void loop() {
     }
     if (m == 110){
       LeftTurn();
+      m=-1;
+    }
+    if (m == 111){
+      RightTurn();
       m=-1;
     }
 
@@ -264,7 +298,6 @@ void RightKick(int type) {
       break;
   }
 }
-
 void GoLeft() {
   Serial.println("GoLeft()");
   Ultimate4(0,93,103,  4,49,41,  8,100,145,  12,130,106,  300);
@@ -292,25 +325,25 @@ void GoRight() {
 
 void LeftTurn() {
   Serial.println("LeftTurn()");
-  Ultimate3(0,93,73,  8,100,85,  12,130,135,  200);
+  Ultimate3(0,93,73,  8,100,90,  12,130,135,  200);
   delay(10);
   Ultimate1(14,99,125,  500);
   delay(10);
   pwm.setPWM(14, 0, angleToPulse(99) );
   delay(10);
-  Ultimate3(0,73,93,  8,85,100,  12,135,130,  100);
+  Ultimate3(0,73,93,  8,90,100,  12,135,130,  100);
   delay(200);
 }
 
 void RightTurn() {
   Serial.println("RightTurn()");
-  Ultimate3(0,93,73,  8,100,85,  12,130,135,  200);
+  Ultimate3(0,93,73,  8,100,90,  12,130,135,  200);
   delay(10);
   Ultimate1(14,99,53,  500);
   delay(200);
   pwm.setPWM(14, 0, angleToPulse(99) );
   delay(10);
-  Ultimate3(0,73,93,  8,85,100,  12,135,130,  100);
+  Ultimate3(0,73,93,  8,90,100,  12,135,130,  100);
   delay(100);
 }
 
