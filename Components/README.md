@@ -5,6 +5,7 @@ The design of the robot came relatively alike the one in this video https://www.
 For the elimination round, we use this design:
 
 <a href="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/Screen%20Shot%202019-12-08%20at%2020.11.15.png"><img src="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/Screen%20Shot%202019-12-08%20at%2020.11.15.png" height="300"/></a>
+<a href="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/IMG_3565.JPG"><img src="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/IMG_3565.JPG" height="300"/></a>
 
 For the final round, we use this:
 
