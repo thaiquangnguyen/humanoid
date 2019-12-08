@@ -8,6 +8,6 @@ For the elimination round, we use this design:
 
 For the final round, we use this:
 
-<a href="https://github.com/thaiquangnguyen/humanoid"><img src="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/Screen%20Shot%202019-12-08%20at%2020.14.50.png" height="300"/></a>
+<a href="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/Screen%20Shot%202019-12-08%20at%2020.14.50.png"><img src="https://github.com/thaiquangnguyen/humanoid/blob/master/Recordings/Screen%20Shot%202019-12-08%20at%2020.14.50.png" height="300"/></a>
 
 The components list alters to every round but you can find all of the parts in stores without any obstacles. For the feet, we used the 3D-printed feet from Instructables https://www.instructables.com/id/Small-Humanoid-Robot-Making/, you can find the .stl file here, I also uploaded it above.
